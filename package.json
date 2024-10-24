@@ -1,0 +1,61 @@
+{
+  "name": "@ai-tools/console-monkey-patch",
+  "version": "0.0.1",
+  "description": "Control where all console methods write to, avoiding writing to the process stdout and stderr.",
+  "private": false,
+  "homepage": "https://github.com/zackiles/console-monkey-patch",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "git+https://github.com/zackiles/console-monkey-patch.git"
+  },
+  "scripts": {
+    "dev": "vitest",
+    "build": "tsup",
+    "ci": "turbo build check-exports lint format:check test",
+    "test": "vitest run",
+    "format": "biome format --write ./src",
+    "format:check": "biome format ./src",
+    "lint": "tsc",
+    "check-exports": "attw --pack .",
+    "local-release": "changeset version && pnpm run release",
+    "release": "turbo run publish-package",
+    "publish-package": "changeset publish"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "keywords": [
+    "ai",
+    "console",
+    "reflect",
+    "monkey-patch",
+    "typescript"
+  ],
+  "author": "Zachary Iles",
+  "license": "MIT",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.9",
+    "@types/node": "^22.7.9",
+    "tsup": "^8.3.0",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  },
+  "dependencies": {
+    "pnpm": "^9.12.2",
+    "typia": "^6.11.3",
+    "zod": "^3.23.8"
+  },
+  "packageManager": "pnpm@9.9.0"
+}
