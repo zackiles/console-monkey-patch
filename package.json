@@ -33,13 +33,7 @@
       "default": "./dist/index.js"
     }
   },
-  "keywords": [
-    "ai",
-    "console",
-    "reflect",
-    "monkey-patch",
-    "typescript"
-  ],
+  "keywords": ["ai", "console", "reflect", "monkey-patch", "typescript"],
   "author": "Zachary Iles",
   "license": "MIT",
   "devDependencies": {
